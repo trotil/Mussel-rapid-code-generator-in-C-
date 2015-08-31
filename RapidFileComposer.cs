@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using Rhino.Geometry;
-using RAPCAM.Models.Fanuc;
-using RAPCAM.Models.General;
-using Rhino;
 
 // Fucture translated code of Luke Johns from Visual Basic to C#
 // we share our version of code for generating RAPID code 
@@ -24,10 +21,6 @@ namespace RAPCAM.BusinessProcess
 {
     public static class RapidFileComposer
     {
-        // this method takes lists of strings, meaning the speed for example can be variable throughout the cuttin plane. This for now will be fixed, but let
-        // in RAPCAM development we will extend this so that it would be possible to set speed for specific parts of path manually or automatically by checking
-        // the curvature of cutting path
-
         public static List<String> generateRapidFile(String moduleName,  List<Plane> planes, List<String> speed, List<String> zone, List<String> tool, List<String> workObject, List<String> variables)
         {
             List<String> rapidLines = new List<String>();
